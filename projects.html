@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <title>Projects | Xari Mouchtouris</title>
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <nav>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
         <div class="container">
-            <h1 class="logo">Xari Mouchtouris Portfolio</h1>
+            <h1 class="logo">Portfolio</h1>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Me</a></li>
@@ -19,6 +21,14 @@
             </ul>
         </div>
     </nav>
+
+    <!-- Toggle Button -->
+    <button class="sidebar-toggle" id="sidebar-toggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Particles.js Container -->
+    <div id="particles-js"></div>
 
     <!-- Main Content -->
     <main class="content">
@@ -39,7 +49,7 @@
                     </div>
                     <!-- Project 2 -->
                     <div class="project-item">
-                        <img src="images/light_source_project.png" alt="Project Two">
+                        <img src="images/light_source_project_2.png" alt="Project Two">
                         <h3>Multi-Functional Light Source</h3>
                         <p>Design of a multi-function light
                             source with three modes: Flashlight mode, Emergency Mode and Mood
@@ -64,6 +74,38 @@
         <p>&copy; 2025 Xari Mouchtouris. All rights reserved.</p>
     </footer>
 
+    <!-- Particles.js Script -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <script>
+        particlesJS.load('particles-js', 'js/particles-config.json', function() {
+            console.log('Particles.js loaded');
+        });
+    </script>
+    <!-- Font Awesome Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script>
+        // Toggle sidebar
+        document.getElementById('sidebar-toggle').addEventListener('click', function () {
+            document.getElementById('sidebar').classList.toggle('active');
+        });
+    </script>
     <script src="js/scripts.js"></script>
+
+    <!-- Custom Styles -->
+    <style>
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
 </body>
 </html>

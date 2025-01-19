@@ -11,13 +11,40 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Inline CSS -->
+    <style>
+        /* Ensure particles container stays behind the content */
+        #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* This places it behind the content */
+        }
+
+        /* Ensure the content is above the particles */
+        .content {
+            position: relative; /* Required for z-index to work */
+            z-index: 1; /* Ensures content stays above the particles */
+            padding: 20px; /* Adjust padding as needed */
+        }
+
+        /* Optional: Add a background color to about section */
+        .about {
+            background-color: rgba(255, 255, 255, 0.8); /* semi-transparent background */
+            padding: 40px;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <nav>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
         <div class="container">
-            <h1 class="logo">Xari Mouchtouris Portfolio</h1>
+            <h1 class="logo">Portfolio</h1>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html" class="current">About Me</a></li>
@@ -26,6 +53,16 @@
             </ul>
         </div>
     </nav>
+
+    <!-- Toggle Button -->
+    <button class="sidebar-toggle" id="sidebar-toggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Particles.js Container -->
+    <div id="particles-js"></div>
+
+
 
     <!-- Main Content -->
     <main class="content">
@@ -170,6 +207,15 @@
         <p>&copy; 2025 Xari Mouchtouris. All rights reserved.</p>
     </footer>
 
+    <!-- Particles.js Script -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <script>
+        particlesJS.load('particles-js', 'js/particles-config.json', function() {
+            console.log('Particles.js loaded');
+        });
+    </script>
+    
+
     <!-- Scripts -->
     <!-- Glide.js Script -->
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
@@ -199,5 +245,17 @@
     </script>
     <!-- Custom Scripts -->
     <script src="js/scripts.js"></script>
+
+    
+    <script>
+        // Toggle sidebar
+        document.getElementById('sidebar-toggle').addEventListener('click', function () {
+            document.getElementById('sidebar').classList.toggle('active');
+        });
+    </script>
+
+    
+
+    
 </body>
 </html>
