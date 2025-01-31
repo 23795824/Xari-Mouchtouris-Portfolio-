@@ -62,38 +62,4 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.textContent = 'Send Message';
         }
     });
-
-
-      // Function to display the modal
-  function showModal(message, type) {
-    modalMessage.textContent = message;
-    feedbackModal.style.display = 'block';
-    const modalContent = feedbackModal.querySelector('.modal-content');
-    modalContent.classList.remove('success', 'error');
-
-    if (type === 'success') {
-      modalContent.classList.add('success');
-    } else if (type === 'error') {
-      modalContent.classList.add('error');
-    }
-  }
-
-  // Event listener to close the modal
-  closeModal.addEventListener('click', () => {
-    feedbackModal.style.display = 'none';
-  });
-
-  // Close modal when clicking outside of it
-  window.addEventListener('click', (event) => {
-    if (event.target === feedbackModal) {
-      feedbackModal.style.display = 'none';
-    }
-  });
-
-  // Optionally, close modal with Escape key
-  window.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && feedbackModal.style.display === 'block') {
-      feedbackModal.style.display = 'none';
-    }
-  });
 });
