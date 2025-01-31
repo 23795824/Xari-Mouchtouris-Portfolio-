@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Space Invaders Project | Xari Mouchtouris</title>
+    <!-- Include your main CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- Glide.js Stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+</head>
+<body>
+
+   <!-- Sidebar Navigation -->
+   <nav class="sidebar" id="sidebar">
+    <div class="container">
+        <h1 class="logo">Portfolio</h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="projects.html" class="current">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Toggle Button -->
+<button class="sidebar-toggle" id="sidebar-toggle">
+    <i class="fas fa-bars"></i>
+</button>
+
+    <!-- Main Content -->
+    <main class="content">
+        <section class="project-detail">
+            <div class="container">
+                <h2>Recreation of Space Invaders (Java)</h2>
+                <p>This project is a recreation of the classic Space Invaders game using Java. It features player-controlled movement, enemy invader patterns, and shooting mechanics. The game leverages Java's object-oriented principles with custom classes for player, invader, and projectile behavior, offering a smooth and engaging gameplay experience.</p>
+                
+                <!-- Video Section -->
+                <div class="video-container">
+                    <!-- Replace the placeholder with your actual video link -->
+                    <iframe src="videos/Space Invaders_Muted (Java).mp4" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+                <!-- Download Link -->
+                <a href="downloads/cosmic.zip" class="btn download-btn" download>
+                    <i class="fas fa-download"></i> Download Source Code
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Xari Mouchtouris. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- Font Awesome Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <!-- Add any additional scripts if needed -->
+
+    <!-- Font Awesome Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script>
+        // Toggle sidebar
+        document.getElementById('sidebar-toggle').addEventListener('click', function () {
+            document.getElementById('sidebar').classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>

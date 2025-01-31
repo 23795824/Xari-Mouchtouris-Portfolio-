@@ -18,3 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
         form.reset();
     });
 });
+
+
+document.querySelector('.sidebar-toggle').addEventListener('click', function() {
+    document.body.classList.toggle('sidebar-active');
+});
