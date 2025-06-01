@@ -1034,15 +1034,12 @@ footer {
 .contact-item i {
     font-size: 50px;
     color: #2196f3;
-  
-    /* Fix: margin-bottom needs units (e.g., px) */
     margin-right: 10px;
-    margin-bottom: 10px;
   
-    /* New: move icon upward */
+    /* Adjust position */
     position: relative;
-    top: -5px; /* move up by 5px, adjust as needed */
-  
+    top: -8px;     /* moves icon upward */
+    left: -5px;    /* shifts icon slightly left */
   }
 
 .contact-item h3 {
