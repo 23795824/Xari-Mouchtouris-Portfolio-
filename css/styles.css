@@ -1299,10 +1299,11 @@ footer {
     }
 
     .contact-info {
-        flex-direction: column;
-        gap: 15px;
-        margin-bottom: 30px;
-    }
+        display: flex;
+        flex-wrap: nowrap;        /* or wrap, depending on how you want mobile behavior */
+        justify-content: flex-start;  /* or space-between, etc. */
+        gap: 20px;
+      }
 
     .contact-item {
         width: 100%;
