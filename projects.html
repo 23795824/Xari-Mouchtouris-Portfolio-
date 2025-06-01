@@ -1,460 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-  />
-  <title>Projects | Xari Mouchtouris</title>
-  <meta
-    name="description"
-    content="Browse a curated selection of projects by Xari Mouchtouris, featuring IoT health monitoring, embedded systems, control design, Java game development, and more."
-  />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Projects | Xari Mouchtouris</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- Glide.js Stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
 
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
-    rel="stylesheet"
-  />
-  <!-- AOS Library -->
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/aos@next/dist/aos.css"
-  />
-  <!-- Font Awesome Icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-  />
-  <!-- Glide.js Stylesheet -->
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css"
-  />
-  <!-- Main CSS (shared across site) -->
-  <link rel="stylesheet" href="css/styles.css" />
-
-  <!-- Inline CSS Overrides for Projects Page -->
-  <style>
-    /* Ensure particles sit behind everything */
-    #particles-js {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: -1;
-    }
-    .content {
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Projects section full-width background */
-    .projects {
-      width: 100vw;
-      margin-left: calc(50% - 50vw);
-      background-color: #f9f9f9;
-      padding: 80px 0;
-      box-sizing: border-box;
-    }
-    .projects .inner {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 20px;
-      box-sizing: border-box;
-    }
-
-    .projects h2 {
-      font-size: 36px;
-      color: var(--text-primary);
-      margin-bottom: 40px;
-      border-left: 5px solid var(--primary-color);
-      padding-left: 15px;
-      text-align: left;
-    }
-
-    /* Each project card */
-    .project-item {
-      background: #ffffff;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      height: 100%;
-    }
-    .project-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-    }
-
-    .project-item img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-bottom: 1px solid #eee;
-    }
-    .project-item h3 {
-      font-size: 22px;
-      color: var(--primary-color);
-      margin: 20px;
-    }
-    .project-item p {
-      flex: 1;
-      font-size: 16px;
-      color: var(--text-secondary);
-      margin: 0 20px 20px;
-      line-height: 1.6;
-    }
-    .project-item .btn {
-      margin: 0 20px 20px;
-      background: var(--primary-color);
-      color: #fff;
-      padding: 12px 25px;
-      border-radius: 25px;
-      font-size: 16px;
-      text-align: center;
-      align-self: flex-start;
-      transition: background 0.3s ease, transform 0.3s ease;
-      text-decoration: none;
-    }
-    .project-item .btn:hover {
-      background: var(--primary-dark);
-      transform: translateY(-2px);
-    }
-
-    /* Glide.js adjustments */
-    .glide {
-      position: relative;
-    }
-    .glide__slides {
-      display: flex;
-      align-items: stretch;
-    }
-    .glide__slide {
-      padding: 0 10px;
-      box-sizing: border-box;
-    }
-    .glide__arrows {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-      pointer-events: none;
-    }
-    .glide__arrow {
-      pointer-events: all;
-      background: rgba(53, 66, 74, 0.7);
-      color: #fff;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-      border-radius: 50%;
-      transition: background 0.3s ease;
-    }
-    .glide__arrow:hover {
-      background: var(--primary-color);
-    }
-    .glide__arrow i {
-      font-size: 20px;
-    }
-    .glide__bullets {
-      text-align: center;
-      margin-top: 20px;
-    }
-    .glide__bullet {
-      background: #cccccc;
-      width: 12px;
-      height: 12px;
-      margin: 0 5px;
-      border-radius: 50%;
-      display: inline-block;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    .glide__bullet--active {
-      background: var(--primary-color);
-    }
-
-    /* Responsive breakpoints */
-    @media (max-width: 992px) {
-      .project-item img {
-        height: 160px;
-      }
-      .project-item h3 {
-        font-size: 20px;
-      }
-      .project-item p {
-        font-size: 15px;
-      }
-    }
-    @media (max-width: 768px) {
-      .projects {
-        padding: 60px 0;
-      }
-      .projects h2 {
-        font-size: 30px;
-        margin-bottom: 30px;
-      }
-    }
-    @media (max-width: 576px) {
-      .project-item img {
-        height: 140px;
-      }
-      .project-item h3 {
-        font-size: 18px;
-        margin: 15px;
-      }
-      .project-item p {
-        margin: 0 15px 15px;
-        font-size: 14px;
-      }
-      .project-item .btn {
-        margin: 0 15px 15px;
-        font-size: 14px;
-        padding: 10px 20px;
-      }
-    }
-  </style>
 </head>
-
 <body>
-  <!-- Sidebar Navigation -->
-  <nav class="sidebar" id="sidebar">
-    <div class="container">
-      <h1 class="logo">Portfolio</h1>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="projects.html" class="current">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
 
-  <!-- Sidebar Toggle -->
-  <button class="sidebar-toggle" id="sidebar-toggle">
-    <i class="fas fa-bars"></i>
-  </button>
-
-  <!-- Particles.js Container -->
-  <div id="particles-js"></div>
-
-  <!-- Main Content -->
-  <main class="content">
-    <!-- Projects Section -->
-    <section class="projects" data-aos="fade-in">
-      <div class="inner">
-        <h2 data-aos="fade-up" data-aos-delay="100">Projects</h2>
-        <!-- Glide.js Carousel -->
-        <div class="glide" data-aos="fade-up" data-aos-delay="200">
-          <div class="glide__track" data-glide-el="track">
-            <ul class="glide__slides">
-              <!-- Project 1 -->
-              <li class="glide__slide">
-                <div class="project-item" data-aos="fade-up" data-aos-delay="300">
-                  <img
-                    src="images/Skripsie_project.png"
-                    alt="Advance IoT Health Monitoring Device"
-                  />
-                  <h3>Advance IoT Health Monitoring Device</h3>
-                  <p>
-                    Design of an IoT device capable of measuring heart rate, oxygen levels,
-                    and temperature for my final year project. It featured an external display
-                    and a remote web server for real-time and historical data monitoring.
-                  </p>
-                  <a
-                    href="reports/23795824_Mouchtouris_XN_skripsie2024.pdf"
-                    target="_blank"
-                    class="btn"
-                    >Learn More!</a
-                  >
-                </div>
-              </li>
-
-              <!-- Project 2 -->
-              <li class="glide__slide">
-                <div class="project-item" data-aos="fade-up" data-aos-delay="350">
-                  <img
-                    src="images/light_source_project_2.png"
-                    alt="Multi-Functional Light Source"
-                  />
-                  <h3>Multi-Functional Light Source</h3>
-                  <p>
-                    Design of a multi-function light source with three modes: Flashlight,
-                    Emergency, and Mood modes. The design features a PCB with software written
-                    in C for an STM32 microcontroller.
-                  </p>
-                  <a
-                    href="reports/DesignE314_2023_Report_23795824[6243].pdf"
-                    target="_blank"
-                    class="btn"
-                    >Learn More!</a
-                  >
-                </div>
-              </li>
-
-              <!-- Project 3 -->
-              <li class="glide__slide">
-                <div class="project-item" data-aos="fade-up" data-aos-delay="400">
-                  <img
-                    src="images/motor_project.png"
-                    alt="Three-Phase Wound Rotor Induction Motor"
-                  />
-                  <h3>Three-Phase Wound Rotor Induction Motor</h3>
-                  <p>
-                    Designed and simulated a three-phase wound rotor induction motor for a
-                    variable-speed pump application, adhering to specific design constraints.
-                  </p>
-                  <a
-                    href="reports/ES_344___Assignment_2_23795824 (1).pdf"
-                    target="_blank"
-                    class="btn"
-                    >Learn More!</a
-                  >
-                </div>
-              </li>
-
-              <!-- Project 4 -->
-              <li class="glide__slide">
-                <div class="project-item" data-aos="fade-up" data-aos-delay="450">
-                  <img
-                    src="images/audio_amplifier_project.png"
-                    alt="Class AB Audio Amplifier"
-                  />
-                  <h3>Class AB Audio Amplifier</h3>
-                  <p>
-                    Design of a Class AB amplifier ensuring stability with no oscillation or
-                    distortion. The circuit was implemented using op-amps, transistors,
-                    resistors, and capacitors, meeting all specified requirements.
-                  </p>
-                  <a
-                    href="reports/audio_amplifier_report.pdf"
-                    target="_blank"
-                    class="btn"
-                    >Learn More!</a
-                  >
-                </div>
-              </li>
-
-              <!-- Project 5 -->
-              <li class="glide__slide">
-                <div class="project-item" data-aos="fade-up" data-aos-delay="500">
-                  <img
-                    src="images/Space Inavders_Java.png"
-                    alt="Recreation of Space Invaders (Java)"
-                  />
-                  <h3>Recreation of Space Invaders (Java)</h3>
-                  <p>
-                    Recreation of the classic Space Invaders game using Java. The game features
-                    player-controlled movement, enemy invader patterns, and shooting mechanics.
-                    It uses Java’s object-oriented principles with custom classes for player,
-                    invader, and projectile behavior, offering a smooth and engaging gameplay
-                    experience.
-                  </p>
-                  <a
-                    href="space_invader_project.html"
-                    class="btn"
-                    >Learn More!</a
-                  >
-                </div>
-              </li>
-
-              <!-- Project 6 -->
-              <li class="glide__slide">
-                <div class="project-item" data-aos="fade-up" data-aos-delay="550">
-                  <img
-                    src="images/space_defense_controller.png"
-                    alt="Discrete Feedback Control System"
-                  />
-                  <h3>Discrete Feedback Control System</h3>
-                  <p>
-                    Designed and tested a discrete feedback control system for a simulated plant.
-                    Two controllers were implemented: a discrete state-space controller with
-                    reference input and one with integral control. Performance was evaluated on
-                    reference tracking, disturbance rejection, and steady-state error.
-                  </p>
-                  <a
-                    href="control_systems_controller.html"
-                    class="btn"
-                    >Learn More!</a
-                  >
-                </div>
-              </li>
-
-              <!-- Add more projects as desired -->
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <div class="container">
+            <h1 class="logo">Portfolio</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="projects.html" class="current">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
-          </div>
+        </div>
+    </nav>
 
-          <!-- Glide.js Arrows -->
-          <div class="glide__arrows" data-glide-el="controls">
-            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
-              <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
-              <i class="fas fa-chevron-right"></i>
-            </button>
-          </div>
+    <!-- Toggle Button -->
+    <button class="sidebar-toggle" id="sidebar-toggle">
+        <i class="fas fa-bars"></i>
+    </button>
 
-          <!-- Glide.js Bullets -->
-          <div class="glide__bullets" data-glide-el="controls[nav]">
-            <!-- Bullets generated automatically by Glide -->
-          </div>
+    <!-- Particles.js Container -->
+    <div id="particles-js"></div>
+
+    <!-- Main Content -->
+    <main class="content">
+        <!-- Projects Section -->
+<section class="projects">
+    <div class="container">
+        <h2>Projects</h2>
+        <!-- Glide.js Carousel -->
+        <div class="glide">
+            <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides">
+                    <!-- Project 1 -->
+                    <li class="glide__slide">
+                        <div class="project-item">
+                            <img src="images/Skripsie_project.png" alt="Advance IoT Health Monitoring Device">
+                            <h3>Advance IoT Health Monitoring Device</h3>
+                            <p>Design of an IoT device capable of measuring heart rate, oxygen levels, and temperature for my final year project. It featured an external display and a remote web server for real-time and historical data monitoring.</p>
+                            <a href="reports/23795824_Mouchtouris_XN_skripsie2024.pdf" target="_blank" class="btn">Learn More!</a>
+                        </div>
+                    </li>
+                    <!-- Project 2 -->
+                    <li class="glide__slide">
+                        <div class="project-item">
+                            <img src="images/light_source_project_2.png" alt="Multi-Functional Light Source">
+                            <h3>Multi-Functional Light Source</h3>
+                            <p>Design of a multi-function light source with three modes: Flashlight, Emergency, and Mood modes. The design features a PCB with software written in C (STM32).</p>
+                            <a href="reports/DesignE314_2023_Report_23795824[6243].pdf" target="_blank" class="btn">Learn More!</a>
+                        </div>
+                    </li>
+                    <!-- Project 3 -->
+                    <li class="glide__slide">
+                        <div class="project-item">
+                            <img src="images/motor_project.png" alt="Three-Phase Wound Rotor Induction Motor">
+                            <h3>Three-Phase Wound Rotor Induction Motor</h3>
+                            <p>Designed and simulated a three-phase wound rotor induction motor for a variable-speed pump application, adhering to specific design constraints.</p>
+                            <a href="reports/ES_344___Assignment_2_23795824 (1).pdf" target="_blank" class="btn">Learn More!</a>
+                        </div>
+                    </li>
+                    <!-- Project 4: Audio Amplifier -->
+                    <li class="glide__slide">
+                        <div class="project-item">
+                            <img src="images/audio_amplifier_project.png" alt="Class AB Audio Amplifier">
+                            <h3>Class AB Audio Amplifier</h3>
+                            <p>Design of a Class AB amplifier ensuring stability with no oscillation or distortion. The circuit was implemented using op-amps, transistors, resistors, and capacitors, meeting all specified requirements.</p>
+                            <a href="reports/audio_amplifier_report.pdf" target="_blank" class="btn">Learn More!</a>
+                        </div>
+                    </li>
+                </li>
+                <!-- Project 5: Space Invaders -->
+                <li class="glide__slide">
+                    <div class="project-item">
+                        <img src="images/Space Inavders_Java.png" alt="Recreation of Space Invaders (Java) ">
+                        <h3>Recreation of Space Invaders (Java)</h3>
+                        <p>Recreation of the classic Space Invaders game using Java. The game features player-controlled movement, enemy invader patterns, and shooting mechanics. The design utilizes Java's object-oriented principles with custom classes for player, invader, and projectile behavior, offering a smooth and engaging gameplay experience.</p>
+                        <a href="space_invader_project.html" class="btn">Learn More!</a>
+                    </div>
+                </li>
+
+                <!-- Project 6: Control Systems Practical - Integral Control -->
+                <li class="glide__slide">
+                    <div class="project-item">
+                        <img src="images/space_defense_controller.png" alt="Design and Testing of a Discrete Feedback Control System ">
+                        <h3>Design and Testing of a Discrete Feedback Control System </h3>
+                        <p>This project involved designing and testing a discrete feedback control system for a simulated plant. Two controllers were implemented: a discrete state-space controller with reference input and a discrete state-space controller with integral control. Their performance was evaluated based on reference tracking, disturbance rejection, and steady-state error. The results highlight how effectively each controller follows the reference signal and handles external disturbances.</p>
+                        <a href="control_systems_controller.html" class="btn">Learn More!</a>
+                    </div>
+                </li>
+
+
+
+                    <!-- Add more projects as desired -->
+                </ul>
+            </div>
+            <!-- Glide.js Arrows -->
+            <div class="glide__arrows" data-glide-el="controls">
+                <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <!-- Glide.js Bullets -->
+            <div class="glide__bullets" data-glide-el="controls[nav]"></div>
         </div>
         <!-- End of Glide.js Carousel -->
-      </div> <!-- /.inner -->
-    </section>
-  </main>
+    </div>
+</section>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Xari Mouchtouris. All rights reserved.</p>
-  </footer>
+    </main>
 
-  <!-- Scripts -->
-  <!-- Particles.js -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-  <script>
-    particlesJS.load("particles-js", "js/particles-config.json", function () {
-      console.log("Particles.js loaded");
-    });
-  </script>
-  <!-- AOS Library -->
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init({ once: true });
-  </script>
-  <!-- Glide.js -->
-  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
-  <script>
-    new Glide(".glide", {
-      type: "carousel",
-      autoplay: 4000,
-      hoverpause: true,
-      perView: 3,
-      gap: 20,
-      animationDuration: 800,
-      breakpoints: {
-        768: { perView: 2 },
-        576: { perView: 1 },
-      },
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Xari Mouchtouris. All rights reserved.</p>
+    </footer>
+
+    <!-- Particles.js Script -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <script>
+        particlesJS.load('particles-js', 'js/particles-config.json', function() {
+            console.log('Particles.js loaded');
+        });
+    </script>
+    <!-- Font Awesome Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script>
+        // Toggle sidebar
+        document.getElementById('sidebar-toggle').addEventListener('click', function () {
+            document.getElementById('sidebar').classList.toggle('active');
+        });
+    </script>
+    <script src="js/scripts.js"></script>
+
+    <!-- Custom Styles -->
+    <style>
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+
+    <!-- Glide.js Script -->
+<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
+
+<!-- Initialize Glide.js -->
+<script>
+    new Glide('.glide', {
+        type: 'carousel',
+        autoplay: 4000,  // Enables auto-sliding every 3 seconds
+        hoverpause: true, // Pauses on hover
+        perView: 3,       // Shows 3 items by default
+        gap: 20,          // Space between slides
+        animationDuration: 800, // Smooth transition effect
+        breakpoints: {
+            768: {
+                perView: 2  // Show 2 items on smaller screens
+            },
+            576: {
+                perView: 1  // Show 1 item on mobile
+            }
+        }
     }).mount();
-  </script>
-  <!-- Font Awesome JS (if needed) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
-  <!-- Custom Scripts (sidebar toggle) -->
-  <script src="js/scripts.js"></script>
-  <script>
-    document
-      .getElementById("sidebar-toggle")
-      .addEventListener("click", function () {
-        document.getElementById("sidebar").classList.toggle("active");
-      });
-  </script>
+</script>
 </body>
 </html>
