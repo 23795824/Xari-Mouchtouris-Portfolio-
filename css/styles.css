@@ -1034,9 +1034,16 @@ footer {
 .contact-item i {
     font-size: 50px;
     color: #2196f3;
-    margin-right: 15px;
-    margin-bottom: 10;
-}
+  
+    /* Fix: margin-bottom needs units (e.g., px) */
+    margin-right: 10px;
+    margin-bottom: 10px;
+  
+    /* New: move icon upward */
+    position: relative;
+    top: -5px; /* move up by 5px, adjust as needed */
+  
+  }
 
 .contact-item h3 {
     font-size: 20px; /* Reduce heading size for better fit */
