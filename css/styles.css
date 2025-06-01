@@ -377,78 +377,183 @@ footer {
 
 
 /* Projects Section */
+/* Container for the entire Projects section */
 .projects {
-    padding: 80px 0; /* Increased padding for better spacing on larger screens */
-}
-
-.projects h2 {
-    text-align: center;
-    margin-bottom: 60px; /* Increased margin for better separation */
-    font-size: 40px; /* Slightly larger font size for headings */
-}
-
-.project-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px; /* Increased gap between project items */
-    justify-content: center;
-    max-width: 1200px; /* Limit the width for better readability */
-    margin: 0 auto; /* Center the grid */
-}
-
-.project-item {
-    flex: 1 1 calc(33.333% - 40px);
-    max-width: 350px; /* Set a maximum width for each project item */
-    background: #ffffff;
-    padding: 25px;
+    width: 100vw; 
+    margin-left: calc(50% - 50vw);
+    background-color: var(--background-light);
+    padding: 80px 0;
+    box-sizing: border-box;
+  }
+  
+  /* Inner wrapper to constrain text width */
+  .projects .inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Section heading */
+  .projects h2 {
+    font-size: 36px;
+    color: var(--text-primary);
+    margin-bottom: 40px;
+    border-left: 5px solid var(--primary-color);
+    padding-left: 15px;
+    text-align: left;
+  }
+  
+  /* Grid container for project cards */
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+  }
+  
+  /* Single project card */
+  .project-item {
+    background: var(--white);
     border-radius: 8px;
-    text-align: left; /* Left-align text for improved readability */
-    border: 1px solid #ddd;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
-}
-
-.project-item img {
+    height: 100%;
+  }
+  
+  /* Card hover effect */
+  .project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Image wrapper to enforce a consistent aspect ratio */
+  .project-item .image-wrapper {
     width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 20px; /* Add spacing below the image */
-}
-
-.project-item h3 {
-    margin-top: 0; /* Remove top margin to align with image */
-    font-size: 24px;
-    color: #00796b; /* Use a color that matches your theme */
-    margin-bottom: 15px;
-}
-
-.project-item p {
+    position: relative;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
+    overflow: hidden;
+  }
+  
+  .project-item .image-wrapper img {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ensures no squishing */
+  }
+  
+  /* Title inside card */
+  .project-item h3 {
+    font-size: 22px;
+    color: var(--primary-color);
+    margin: 20px;
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+  
+  /* Description */
+  .project-item p {
     flex: 1;
-    margin: 0 0 20px;
-    color: #555;
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin: 0 20px 20px 20px;
     line-height: 1.6;
-}
-
-.project-item .btn {
-    margin-top: auto; /* Pushes the button to the bottom */
-    align-self: flex-start; /* Align button to the left */
-    padding: 10px 20px;
-    background: #00796b;
-    color: #fff;
+  }
+  
+  /* “Learn More” button */
+  .project-item .btn {
+    margin: 0 20px 20px 20px;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 16px;
+    text-align: center;
+    align-self: flex-start;
+    transition: background 0.3s ease, transform 0.3s ease;
     text-decoration: none;
-    border-radius: 5px;
+  }
+  
+  .project-item .btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+  }
+  
+  /* Glide.js container adjustments */
+  .glide {
+    position: relative;
+  }
+  
+  .glide__slides {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+  }
+  
+  /* Each slide container simply holds one grid cell */
+  .glide__slide {
+    display: block;
+  }
+  
+  /* Arrow controls centered vertically */
+  .glide__arrows {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  
+  .glide__arrow {
+    pointer-events: all;
+    background: rgba(53, 66, 74, 0.7);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
     transition: background 0.3s ease;
-}
-
-.project-item .btn:hover {
-    background: #005f56;
-}
+  }
+  
+  .glide__arrow:hover {
+    background: var(--primary-color);
+  }
+  
+  .glide__arrow i {
+    font-size: 20px;
+  }
+  
+  /* Bullets below carousel */
+  .glide__bullets {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .glide__bullet {
+    background: #cccccc;
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .glide__bullet--active {
+    background: var(--primary-color);
+  }
+  
 
 
 /* Contact Section */
@@ -1229,6 +1334,74 @@ footer {
 
 
 /* Enhanced Mobile Styles */
+
+/* 2 columns at ≤992px */
+@media (max-width: 992px) {
+    .project-grid,
+    .glide__slides {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* 1 column at ≤768px */
+  @media (max-width: 768px) {
+    .project-grid,
+    .glide__slides {
+      grid-template-columns: 1fr;
+    }
+    .projects {
+      padding: 60px 0;
+    }
+    .projects h2 {
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
+    .project-item h3 {
+      font-size: 20px;
+      margin: 15px 15px 10px;
+    }
+    .project-item p {
+      margin: 0 15px 15px;
+      font-size: 15px;
+    }
+    .project-item .btn {
+      margin: 0 15px 15px;
+      font-size: 14px;
+      padding: 10px 20px;
+    }
+  }
+  
+  /* 1 column narrower at ≤576px, further reduce padding/fonts */
+  @media (max-width: 576px) {
+    .projects {
+      padding: 40px 0;
+    }
+    .projects h2 {
+      font-size: 26px;
+      margin-bottom: 25px;
+      padding-left: 10px;
+      border-left-width: 4px;
+    }
+    .project-item h3 {
+      font-size: 18px;
+      margin: 10px 10px 8px;
+    }
+    .project-item p {
+      margin: 0 10px 12px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .project-item .btn {
+      margin: 0 10px 12px;
+      font-size: 13px;
+      padding: 8px 16px;
+    }
+    /* Keep the image ratio correct */
+    .project-item .image-wrapper {
+      padding-top: 56.25%; /* 16:9 remains */
+    }
+  }
+  
 @media (max-width: 600px) { /* Increased breakpoint for better tablet support */
     /* General Mobile Adjustments */
     body {
