@@ -35,7 +35,7 @@
   <!-- Main CSS -->
   <link rel="stylesheet" href="css/styles.css" />
 
-  <!-- Inline CSS Overrides (for full‐width “About” background) -->
+  <!-- Inline CSS Overrides (for full‐width “About” background and left‐aligned text) -->
   <style>
     /* Override .content max-width so About spans full width */
     .content.about-wrapper {
@@ -54,10 +54,10 @@
       box-sizing: border-box;
     }
 
-    /* Inner container to limit text width */
+    /* Inner container: remove auto-centering so content sits flush left */
     .about .inner {
       max-width: 900px;
-      margin: 0 auto;
+      margin: 0;           /* no auto-centering */
       padding: 0 20px;
       box-sizing: border-box;
     }
