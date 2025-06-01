@@ -1004,15 +1004,14 @@ footer {
 .contact-item {
     display: flex;
     align-items: center;
-
-    flex: 1; /* keep your existing width settings */
+    flex: 1;
     max-width: 250px;
     background: #f9f9f9;
     padding: 30px;
     text-align: left;
     border-radius: 5px;
     transition: transform 0.3s ease, box-shadow 0 10px 15px rgba(0, 0, 0, 0.1);
-    border: 2px solid blue; /* you can remove the border once you confirm alignment */
+    /* border: 2px solid blue;  ← remove or keep just for debugging */
 }
 
 .contact-item {
