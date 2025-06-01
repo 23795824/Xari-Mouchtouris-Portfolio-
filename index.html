@@ -1,84 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Xari Mouchtouris | Home</title>
-    <link rel="icon" type="image/png" href="images/favicon.png" />
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+  />
+  <title>Xari Mouchtouris | Home</title>
+  <meta
+    name="description"
+    content="Xari Mouchtouris – Electrical & Electronic Engineer specializing in robotics, control systems, and IoT. Explore projects and get in touch."
+  />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap" rel="stylesheet">
-    <!-- AOS Library -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap"
+    rel="stylesheet"
+  />
+  <!-- AOS Library -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/aos@next/dist/aos.css"
+  />
+  <!-- Font Awesome Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <style>
+    /* Narrow the hero container so text lines aren’t too wide */
+    .hero .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    /* Social icons under the CTA */
+    .hero .social-icons {
+      margin-top: 20px;
+    }
+    .hero .social-icons a {
+      color: #ffffff;
+      font-size: 1.4rem;
+      margin: 0 10px;
+      transition: color 0.3s ease;
+    }
+    .hero .social-icons a:hover {
+      color: var(--accent-color);
+    }
+
+    /* Scroll-down arrow hint */
+    .scroll-down {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2rem;
+      color: #ffffff;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+      }
+      40% {
+        transform: translateX(-50%) translateY(-8px);
+      }
+      60% {
+        transform: translateX(-50%) translateY(-4px);
+      }
+    }
+  </style>
 </head>
+
 <body>
+  <!-- Sidebar Navigation -->
+  <nav class="sidebar" id="sidebar">
+    <div class="container">
+      <h1 class="logo">Portfolio</h1>
+      <ul>
+        <li><a href="index.html" class="current">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <!-- Sidebar Navigation -->
-    <nav class="sidebar" id="sidebar">
-        <div class="container">
-            <h1 class="logo">Portfolio</h1>
-            <ul>
-                <li><a href="index.html" class="current">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+  <!-- Sidebar Toggle Button -->
+  <button class="sidebar-toggle" id="sidebar-toggle">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <!-- Main Content -->
+  <main class="content">
+    <!-- Hero Section -->
+    <section class="hero" data-aos="fade-in">
+      <div id="particles-js"></div>
+      <div class="container">
+        <h2 data-aos="fade-up" data-aos-delay="200">
+          Hi, I’m <span style="color: var(--accent-color)">Xari Mouchtouris</span>
+        </h2>
+        <p data-aos="fade-up" data-aos-delay="400">
+          I’m an Electrical & Electronic Engineer from Stellenbosch University
+          with a passion for <strong>robotics</strong> and <strong>control systems</strong>. My
+          focus areas include computer systems, energy management, signal
+          processing, and IoT device development. I thrive on solving complex
+          challenges and am committed to continuous learning. Let’s build
+          something impactful together!
+        </p>
+        <a
+          href="projects.html"
+          class="btn"
+          data-aos="fade-up"
+          data-aos-delay="600"
+        >
+          <i class="fas fa-briefcase"></i> View My Projects
+        </a>
+
+        <!-- Social Icons -->
+        <div
+          class="social-icons"
+          data-aos="fade-up"
+          data-aos-delay="800"
+        >
+          <a
+            href="https://github.com/your-github-username"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/xari-mouchtouris"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a
+            href="mailto:xarinikolakimouchtouris@gmail.com"
+            aria-label="Email"
+          >
+            <i class="fas fa-envelope"></i>
+          </a>
         </div>
-    </nav>
+      </div>
 
-    <!-- Toggle Button -->
-    <button class="sidebar-toggle" id="sidebar-toggle">
-        <i class="fas fa-bars"></i>
-    </button>
+      <!-- Scroll-down arrow -->
+      <div class="scroll-down" data-aos="fade-up" data-aos-delay="1000">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
+  </main>
 
-    
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Xari Mouchtouris. All rights reserved.</p>
+  </footer>
 
-    <!-- Main Content -->
-    <main class="content">
-        <!-- Hero Section -->
-        <section class="hero" data-aos="fade-in">
-            <div id="particles-js"></div>
-            <div class="container">
-                <h2 data-aos="fade-up" data-aos-delay="200">Hi, I'm Xari Mouchtouris</h2>
-                <p data-aos="fade-up" data-aos-delay="400">
-                    <strong></strong>I'm an Electrical and Electronic Engineer from Stellenbosch University, focusing on robotics. My passion lies in problem-solving and developing effective solutions. I'm particularly interested in control systems, computer systems, energy systems, signal processing, and IoT devices. Committed to continuous learning, I'm eager to embark on my professional journey and contribute to impactful engineering projects. </strong>
-                </p>
-                <a href="projects.html" class="btn"><i class="fas fa-briefcase"></i> View My Projects</a>
-            </div>
-        </section>
-    </main>
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Xari Mouchtouris. All rights reserved.</p>
-    </footer>
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <script>
+    particlesJS.load(
+      'particles-js',
+      'js/particles-config.json',
+      function () {
+        console.log('Particles.js loaded');
+      }
+    );
+  </script>
 
-    <!-- Scripts -->
-    <!-- Particles.js -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-    <script>
-        /* Load particles.js configuration */
-        particlesJS.load('particles-js', 'js/particles-config.json', function() {
-            console.log('Particles.js loaded');
-        });
-    </script>
-    <!-- AOS Library -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            once: true
-        });
-    </script>
-    <!-- Custom Scripts -->
-    <script src="js/scripts.js"></script> 
-    <script>
-        // Toggle sidebar
-        document.getElementById('sidebar-toggle').addEventListener('click', function () {
-            document.getElementById('sidebar').classList.toggle('active');
-        });
-    </script>
+  <!-- AOS Library -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true });
+  </script>
+
+  <!-- Custom Scripts -->
+  <script src="js/scripts.js"></script>
+  <script>
+    // Toggle sidebar on click
+    document
+      .getElementById('sidebar-toggle')
+      .addEventListener('click', function () {
+        document.getElementById('sidebar').classList.toggle('active');
+      });
+  </script>
 </body>
 </html>
