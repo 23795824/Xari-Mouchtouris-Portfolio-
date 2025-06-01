@@ -35,47 +35,52 @@
   <!-- Main CSS -->
   <link rel="stylesheet" href="css/styles.css" />
 
+  <!-- Inline CSS Overrides (from above) -->
   <style>
-    /* Particles behind content */
-    #particles-js {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
+    /* Override .content for about section */
+    .content.about-wrapper {
+      max-width: none;          
+      margin: 0;                
+      padding: 0;               
     }
-    /* Ensure main content sits above particles */
-    .content {
+
+    /* Full-width about section background */
+    .about {
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 60px 0;
       position: relative;
-      z-index: 1;
-      padding: 40px 20px;
+      box-sizing: border-box;
+    }
+
+    /* Inner container to limit text width */
+    .about .inner {
       max-width: 900px;
       margin: 0 auto;
+      padding: 0 20px;
+      box-sizing: border-box;
     }
-    /* About section background */
-    .about {
-      background-color: rgba(255, 255, 255, 0.85);
-      padding: 30px 20px;
-      border-radius: 8px;
-    }
-    /* Headings accent */
-    .about h2, .about h3 {
+
+    /* Accent-colored headings */
+    .about h2,
+    .about h3 {
       color: var(--accent-color);
       margin-bottom: 16px;
     }
-    /* Education item styling */
+
+    /* Education card styling */
     .education-item {
       background: #fafafa;
       padding: 18px;
       border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
       margin-bottom: 20px;
     }
     .education-item h4 {
       margin-bottom: 8px;
     }
-    /* Skills carousel adjustments */
+
+    /* Skills carousel styling */
     .skill-item {
       text-align: center;
       padding: 20px;
@@ -95,7 +100,8 @@
       font-weight: 600;
       font-size: 1rem;
     }
-    /* Social icons row at bottom */
+
+    /* Social icons row */
     .social-icons {
       text-align: center;
       margin-top: 30px;
@@ -108,6 +114,20 @@
     }
     .social-icons a:hover {
       color: var(--accent-color);
+    }
+
+    /* Particles behind content (optional: copied from your original) */
+    #particles-js {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    .content {
+      position: relative;
+      z-index: 1;
     }
   </style>
 </head>
@@ -126,201 +146,205 @@
     </div>
   </nav>
 
-  <!-- Sidebar Toggle Button -->
+  <!-- Sidebar Toggle -->
   <button class="sidebar-toggle" id="sidebar-toggle">
     <i class="fas fa-bars"></i>
   </button>
 
-  <!-- Particles.js Container -->
+  <!-- Particles.js (in the background) -->
   <div id="particles-js"></div>
 
-  <!-- Main Content -->
-  <main class="content">
-    <!-- About Section -->
+  <!-- MAIN CONTENT – applying both .content and .about-wrapper to override max-width -->
+  <main class="content about-wrapper">
+    <!-- ABOUT SECTION (now truly full-width background) -->
     <section class="about" data-aos="fade-up">
-      <!-- Intro / Who I Am -->
-      <h2 data-aos="fade-up" data-aos-delay="100">About Me</h2>
-      <p data-aos="fade-up" data-aos-delay="200">
-        Hello! I’m <strong>Xari Mouchtouris</strong>, an Electrical &amp; Electronic Engineer from
-        Stellenbosch University. My core interests are in
-        <strong>Control Systems</strong>, <strong>Signal Processing</strong>,
-        <strong>Embedded Systems</strong>, and <strong>IoT Development</strong>. I love diving
-        into complex problems—whether it’s designing a real-time robotic controller or
-        architecting a low-power sensor network. I’m committed to continuous learning and
-        look forward to collaborating on projects that push the boundaries of engineering.
-      </p>
+      <div class="inner">
+        <!-- Intro / Who I Am -->
+        <h2 data-aos="fade-up" data-aos-delay="100">About Me</h2>
+        <p data-aos="fade-up" data-aos-delay="200">
+          Hello! I’m <strong>Xari Mouchtouris</strong>, an Electrical &amp; Electronic Engineer
+          from Stellenbosch University. My core interests are in
+          <strong>Control Systems</strong>, <strong>Signal Processing</strong>,
+          <strong>Embedded Systems</strong>, and <strong>IoT Development</strong>. I love
+          diving into complex problems—whether it’s designing a real-time robotic
+          controller or architecting a low-power sensor network. I’m committed to continuous
+          learning and look forward to collaborating on projects that push the boundaries of
+          engineering.
+        </p>
 
-      <!-- Education Section -->
-      <h3 data-aos="fade-up" data-aos-delay="300">Education</h3>
-      <div class="education">
-        <!-- University -->
-        <div
-          class="education-item"
-          data-aos="fade-up"
-          data-aos-delay="400"
-        >
-          <h4>
-            <i class="fas fa-university"></i> Stellenbosch University
-          </h4>
-          <p><strong>Degree:</strong> B.Eng in Electrical and Electronic Engineering</p>
-          <p><strong>Years:</strong> Feb 2020 – Nov 2024</p>
-          <p>
-            <strong>Focus:</strong> Robotics, Control Systems, Embedded Systems
-          </p>
-          <p><strong>Average:</strong> 66%</p>
-        </div>
-        <!-- High School -->
-        <div
-          class="education-item"
-          data-aos="fade-up"
-          data-aos-delay="500"
-        >
-          <h4>
-            <i class="fas fa-school"></i> Hoërskool Langenhoven
-          </h4>
-          <p><strong>Qualification:</strong> National Senior Certificate</p>
-          <p><strong>Year Graduated:</strong> 2019</p>
-          <p>
-            <strong>Highlights:</strong> Mathematics &amp; Physical Sciences excellence
-          </p>
-          <p><strong>Average:</strong> 77%</p>
-        </div>
-      </div>
-
-      <!-- Skills Section -->
-      <h3 data-aos="fade-up" data-aos-delay="600">Skills</h3>
-      <div
-        class="glide"
-        data-aos="fade-up"
-        data-aos-delay="700"
-      >
-        <div class="glide__track" data-glide-el="track">
-          <ul class="glide__slides">
-            <!-- Circuit Design & Analysis -->
-            <li class="glide__slide">
-              <div class="skill-item">
-                <i class="fas fa-microchip"></i>
-                <h4>Circuit Design &amp; Analysis</h4>
-              </div>
-            </li>
-            <!-- Control Systems -->
-            <li class="glide__slide">
-              <div class="skill-item">
-                <i class="fas fa-robot"></i>
-                <h4>Control Systems</h4>
-              </div>
-            </li>
-            <!-- Signal Processing -->
-            <li class="glide__slide">
-              <div class="skill-item">
-                <i class="fas fa-wave-square"></i>
-                <h4>Signal Processing</h4>
-              </div>
-            </li>
-            <!-- Energy Systems -->
-            <li class="glide__slide">
-              <div class="skill-item">
-                <i class="fas fa-bolt"></i>
-                <h4>Energy Systems</h4>
-              </div>
-            </li>
-            <!-- Python/C/C++ -->
-            <li class="glide__slide">
-              <div class="skill-item">
-                <i class="fab fa-python"></i>
-                <h4>Python / C / C++</h4>
-              </div>
-            </li>
-            <!-- MATLAB/Simulink -->
-            <li class="glide__slide">
-              <div class="skill-item">
-                <i class="fas fa-calculator"></i>
-                <h4>MATLAB / Simulink</h4>
-              </div>
-            </li>
-            <!-- Embedded Systems -->
-            <li class="glide__slide">
-              <div class="skill-item">
-                <i class="fas fa-sitemap"></i>
-                <h4>Embedded Systems</h4>
-              </div>
-            </li>
-            <!-- IoT Development -->
-            <li class="glide__slide">
-              <div class="skill-item">
-                <i class="fas fa-wifi"></i>
-                <h4>IoT Development</h4>
-              </div>
-            </li>
-            <!-- PCB Design (KiCad) -->
-            <li class="glide__slide">
-              <div class="skill-item">
-                <i class="fas fa-tools"></i>
-                <h4>PCB Design (KiCad)</h4>
-              </div>
-            </li>
-            <!-- ESP32 & STM32 -->
-            <li class="glide__slide">
-              <div class="skill-item">
-                <i class="fab fa-arduino"></i>
-                <h4>ESP32 &amp; STM32</h4>
-              </div>
-            </li>
-            <!-- Overleaf -->
-            <li class="glide__slide">
-              <div class="skill-item">
-                <i class="fas fa-file-code"></i>
-                <h4>Overleaf</h4>
-              </div>
-            </li>
-            <!-- (Add more as needed) -->
-          </ul>
-        </div>
-        <!-- Glide.js Arrows -->
-        <div class="glide__arrows" data-glide-el="controls">
-          <button
-            class="glide__arrow glide__arrow--left"
-            data-glide-dir="<"
+        <!-- EDUCATION HEADING -->
+        <h3 data-aos="fade-up" data-aos-delay="300">Education</h3>
+        <div class="education">
+          <!-- University -->
+          <div
+            class="education-item"
+            data-aos="fade-up"
+            data-aos-delay="400"
           >
-            <i class="fas fa-chevron-left"></i>
-          </button>
-          <button
-            class="glide__arrow glide__arrow--right"
-            data-glide-dir=">"
-          >
-            <i class="fas fa-chevron-right"></i>
-          </button>
-        </div>
-      </div>
+            <h4>
+              <i class="fas fa-university"></i> Stellenbosch University
+            </h4>
+            <p><strong>Degree:</strong> B.Eng in Electrical and Electronic Engineering</p>
+            <p><strong>Years:</strong> Feb 2020 – Nov 2024</p>
+            <p>
+              <strong>Focus:</strong> Robotics, Control Systems, Embedded Systems
+            </p>
+            <p><strong>Average:</strong> 66%</p>
+          </div>
 
-      <!-- Social Icons -->
-      <div
-        class="social-icons"
-        data-aos="fade-up"
-        data-aos-delay="900"
-      >
-        <a
-          href="https://github.com/your-github-username"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="GitHub"
+          <!-- High School -->
+          <div
+            class="education-item"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
+            <h4>
+              <i class="fas fa-school"></i> Hoërskool Langenhoven
+            </h4>
+            <p><strong>Qualification:</strong> National Senior Certificate</p>
+            <p><strong>Year Graduated:</strong> 2019</p>
+            <p>
+              <strong>Highlights:</strong> Mathematics &amp; Physical Sciences excellence
+            </p>
+            <p><strong>Average:</strong> 77%</p>
+          </div>
+        </div>
+
+        <!-- SKILLS HEADING -->
+        <h3 data-aos="fade-up" data-aos-delay="600">Skills</h3>
+        <div
+          class="glide"
+          data-aos="fade-up"
+          data-aos-delay="700"
         >
-          <i class="fab fa-github"></i>
-        </a>
-        <a
-          href="https://www.linkedin.com/in/xari-mouchtouris"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn"
+          <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+              <!-- Circuit Design & Analysis -->
+              <li class="glide__slide">
+                <div class="skill-item">
+                  <i class="fas fa-microchip"></i>
+                  <h4>Circuit Design &amp; Analysis</h4>
+                </div>
+              </li>
+              <!-- Control Systems -->
+              <li class="glide__slide">
+                <div class="skill-item">
+                  <i class="fas fa-robot"></i>
+                  <h4>Control Systems</h4>
+                </div>
+              </li>
+              <!-- Signal Processing -->
+              <li class="glide__slide">
+                <div class="skill-item">
+                  <i class="fas fa-wave-square"></i>
+                  <h4>Signal Processing</h4>
+                </div>
+              </li>
+              <!-- Energy Systems -->
+              <li class="glide__slide">
+                <div class="skill-item">
+                  <i class="fas fa-bolt"></i>
+                  <h4>Energy Systems</h4>
+                </div>
+              </li>
+              <!-- Python / C / C++ -->
+              <li class="glide__slide">
+                <div class="skill-item">
+                  <i class="fab fa-python"></i>
+                  <h4>Python / C / C++</h4>
+                </div>
+              </li>
+              <!-- MATLAB / Simulink -->
+              <li class="glide__slide">
+                <div class="skill-item">
+                  <i class="fas fa-calculator"></i>
+                  <h4>MATLAB / Simulink</h4>
+                </div>
+              </li>
+              <!-- Embedded Systems -->
+              <li class="glide__slide">
+                <div class="skill-item">
+                  <i class="fas fa-sitemap"></i>
+                  <h4>Embedded Systems</h4>
+                </div>
+              </li>
+              <!-- IoT Development -->
+              <li class="glide__slide">
+                <div class="skill-item">
+                  <i class="fas fa-wifi"></i>
+                  <h4>IoT Development</h4>
+                </div>
+              </li>
+              <!-- PCB Design (KiCad) -->
+              <li class="glide__slide">
+                <div class="skill-item">
+                  <i class="fas fa-tools"></i>
+                  <h4>PCB Design (KiCad)</h4>
+                </div>
+              </li>
+              <!-- ESP32 & STM32 -->
+              <li class="glide__slide">
+                <div class="skill-item">
+                  <i class="fab fa-arduino"></i>
+                  <h4>ESP32 &amp; STM32</h4>
+                </div>
+              </li>
+              <!-- Overleaf -->
+              <li class="glide__slide">
+                <div class="skill-item">
+                  <i class="fas fa-file-code"></i>
+                  <h4>Overleaf</h4>
+                </div>
+              </li>
+              <!-- (Add more as needed) -->
+            </ul>
+          </div>
+          <!-- Glide.js Arrows -->
+          <div class="glide__arrows" data-glide-el="controls">
+            <button
+              class="glide__arrow glide__arrow--left"
+              data-glide-dir="<"
+            >
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button
+              class="glide__arrow glide__arrow--right"
+              data-glide-dir=">"
+            >
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- SOCIAL ICONS AT BOTTOM -->
+        <div
+          class="social-icons"
+          data-aos="fade-up"
+          data-aos-delay="900"
         >
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a
-          href="mailto:xarinikolakimouchtouris@gmail.com"
-          aria-label="Email"
-        >
-          <i class="fas fa-envelope"></i>
-        </a>
+          <a
+            href="https://github.com/your-github-username"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/xari-mouchtouris"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a
+            href="mailto:xarinikolakimouchtouris@gmail.com"
+            aria-label="Email"
+          >
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
       </div>
     </section>
   </main>
@@ -330,6 +354,7 @@
     <p>&copy; 2025 Xari Mouchtouris. All rights reserved.</p>
   </footer>
 
+  <!-- Scripts -->
   <!-- Particles.js -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
   <script>
@@ -348,7 +373,7 @@
     AOS.init({ once: true });
   </script>
 
-  <!-- Glide.js Script -->
+  <!-- Glide.js -->
   <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
   <script>
     new Glide('.glide', {
@@ -369,10 +394,9 @@
   <!-- Font Awesome JS (if needed) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
 
-  <!-- Custom Scripts -->
+  <!-- Custom Scripts (sidebar toggle, etc.) -->
   <script src="js/scripts.js"></script>
   <script>
-    // Toggle sidebar
     document
       .getElementById('sidebar-toggle')
       .addEventListener('click', function () {
