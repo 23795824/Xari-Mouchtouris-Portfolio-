@@ -84,7 +84,7 @@ section {
 }
 
 .container {
-  width: min(900px, calc(100% - 80px));
+  width: min(880px, calc(100% - 72px));
   margin: 0 auto;
 }
 
@@ -372,13 +372,37 @@ main {
 /* About */
 .about .inner,
 .about .container {
-  width: min(900px, calc(100% - 80px));
+  width: min(880px, calc(100% - 72px));
   margin: 0 auto;
   padding: 0 18px;
 }
 
 .about p {
-  max-width: 900px;
+  max-width: 860px;
+}
+
+/* Glide fallback (show skills when Glide JS/CSS isn’t available) */
+.no-glide .glide__track {
+  overflow: visible;
+}
+
+.no-glide .glide__slides {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.no-glide .glide__slide {
+  width: auto !important;
+  flex: none;
+}
+
+.no-glide .glide__arrows,
+.no-glide .glide__bullets {
+  display: none !important;
 }
 
 .about .inner {

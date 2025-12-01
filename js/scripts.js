@@ -13,6 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   maybeInitAOS();
 
+  // Flag when Glide is unavailable so skills/projects fall back to static grid
+  if (!window.Glide) {
+    document.body.classList.add('no-glide');
+  }
+
   const sidebar = document.getElementById('sidebar');
   const sidebarToggle = document.querySelector('.sidebar-toggle');
   const sidebarOverlay = document.querySelector('.sidebar-overlay');
