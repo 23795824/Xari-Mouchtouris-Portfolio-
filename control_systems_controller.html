@@ -21,10 +21,11 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Me</a></li>
             <li><a href="projects.html" class="current">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </div>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</div>
 </nav>
+<div class="sidebar-overlay"></div>
 
 <!-- Toggle Button -->
 <button class="sidebar-toggle" id="sidebar-toggle">
@@ -35,7 +36,7 @@
     <main class="content">
         <section class="project-detail">
             <div class="container">
-                <h2>Design and Testing of a Discrete Feedback Control System</h2>
+                <h2 class="section-heading">Design and Testing of a Discrete Feedback Control System</h2>
                 <p>This practical involved the design and testing of a discrete feedback control system for a simulated plant. Two different controllers were implemented: a discrete state-space controller with reference input and a discrete state-space controller with integral control. The objective was to evaluate and compare their performance in tracking a reference signal.
 
                     Additionally, an external disturbance was introduced to assess the disturbance rejection capability of each controller. The analysis focused on key performance metrics, including transient response, steady-state tracking error, and overall system stability.
@@ -67,12 +68,6 @@
 
     <!-- Font Awesome Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
-    <script>
-        // Toggle sidebar
-        document.getElementById('sidebar-toggle').addEventListener('click', function () {
-            document.getElementById('sidebar').classList.toggle('active');
-        });
-    </script>
 
 </body>
 </html>

@@ -30,52 +30,6 @@
   />
   <!-- Main CSS -->
   <link rel="stylesheet" href="css/styles.css" />
-
-  <style>
-    /* Narrow the hero container so text lines aren’t too wide */
-    .hero .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 20px;
-      text-align: center;
-    }
-
-    /* Social icons under the CTA */
-    .hero .social-icons {
-      margin-top: 20px;
-    }
-    .hero .social-icons a {
-      color: #ffffff;
-      font-size: 1.4rem;
-      margin: 0 10px;
-      transition: color 0.3s ease;
-    }
-    .hero .social-icons a:hover {
-      color: var(--accent-color);
-    }
-
-    /* Scroll-down arrow hint */
-    .scroll-down {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 2rem;
-      color: #ffffff;
-      animation: bounce 2s infinite;
-    }
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% {
-        transform: translateX(-50%) translateY(0);
-      }
-      40% {
-        transform: translateX(-50%) translateY(-8px);
-      }
-      60% {
-        transform: translateX(-50%) translateY(-4px);
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -91,6 +45,7 @@
       </ul>
     </div>
   </nav>
+  <div class="sidebar-overlay"></div>
 
   <!-- Sidebar Toggle Button -->
   <button class="sidebar-toggle" id="sidebar-toggle">
@@ -180,19 +135,7 @@
 
   <!-- AOS Library -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init({ once: true });
-  </script>
-
   <!-- Custom Scripts -->
   <script src="js/scripts.js"></script>
-  <script>
-    // Toggle sidebar on click
-    document
-      .getElementById('sidebar-toggle')
-      .addEventListener('click', function () {
-        document.getElementById('sidebar').classList.toggle('active');
-      });
-  </script>
 </body>
 </html>

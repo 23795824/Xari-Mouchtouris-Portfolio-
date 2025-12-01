@@ -62,8 +62,9 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve Static Files
-app.use(express.static(path.join(__dirname, 'public')));
+// Serve Static Files (site lives in repo root)
+const staticDir = path.join(__dirname);
+app.use(express.static(staticDir));
 
 // Verify Environment Variables on Startup
 console.log('Environment Variables:');
@@ -152,8 +153,12 @@ const mailOptions = {
   }
 );
 
+// Fallback to index.html for direct URL access to pages
+app.get('*', (req, res) => {
+  res.sendFile(path.join(staticDir, 'index.html'));
+});
+
 // Start the Server
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
-
