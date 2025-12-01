@@ -41,6 +41,11 @@ body {
     linear-gradient(135deg, #050913, #0c1224 55%, #0a162e);
   min-height: 100vh;
   line-height: 1.6;
+  overflow-x: hidden;
+}
+
+html {
+  overflow-x: hidden;
 }
 
 a {
