@@ -84,7 +84,7 @@ section {
 }
 
 .container {
-  width: min(840px, calc(100% - 72px));
+  width: min(760px, calc(100% - 72px));
   margin-left: 0;
   margin-right: auto;
 }
@@ -373,7 +373,7 @@ main {
 /* About */
 .about .inner,
 .about .container {
-  width: min(840px, calc(100% - 64px));
+  width: min(800px, calc(100% - 64px));
   margin-left: 0;
   margin-right: auto;
   padding: 0 14px;
