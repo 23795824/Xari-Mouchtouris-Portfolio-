@@ -84,7 +84,7 @@ section {
 }
 
 .container {
-  width: min(1120px, calc(100% - 48px));
+  width: min(960px, calc(100% - 64px));
   margin: 0 auto;
 }
 
@@ -128,6 +128,9 @@ section {
   position: relative;
   z-index: 1;
   min-height: 100vh;
+  max-width: calc(100vw - var(--nav-width));
+  overflow-x: hidden;
+  padding: 0 10px;
 }
 
 main {
@@ -369,7 +372,7 @@ main {
 /* About */
 .about .inner,
 .about .container {
-  width: min(1000px, calc(100% - 48px));
+  width: min(960px, calc(100% - 64px));
   margin: 0 auto;
 }
 
