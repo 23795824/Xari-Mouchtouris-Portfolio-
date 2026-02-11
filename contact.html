@@ -90,7 +90,7 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Xari Mouchtouris. All rights reserved.</p>
+    <p>&copy; <span id="year"></span> Xari Mouchtouris. All rights reserved.</p>
   </footer>
 
   <!-- Scripts -->
@@ -113,5 +113,11 @@
 
   <!-- Custom Scripts -->
   <script src="js/scripts.js"></script>
+  <script>
+    const yearEl = document.getElementById('year');
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
+  </script>
 </body>
 </html>

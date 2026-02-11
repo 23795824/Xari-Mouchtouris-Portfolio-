@@ -54,12 +54,18 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Xari Mouchtouris. All rights reserved.</p>
+        <p>&copy; <span id="year"></span> Xari Mouchtouris. All rights reserved.</p>
     </footer>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
     <script src="js/scripts.js"></script>
+    <script>
+        const yearEl = document.getElementById('year');
+        if (yearEl) {
+            yearEl.textContent = new Date().getFullYear();
+        }
+    </script>
 
 </body>
 </html>
