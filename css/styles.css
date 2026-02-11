@@ -9,7 +9,7 @@
   --accent: #f6c76c;
   --accent-2: #68d4ff;
   --primary: #7c8cff;
-  --text: #e8edf5;
+  --text: #f5f7ff;
   --muted: #a5b1c7;
   --error: #f97171;
   --success: #6fdca3;
@@ -84,7 +84,8 @@ h1, h2, h3, h4 {
   font-family: 'Sora', 'Inter', sans-serif;
   letter-spacing: -0.2px;
   color: #f7f9ff;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
+  margin-top: 15px;
 }
 
 /* Layout */
@@ -102,7 +103,7 @@ h1, h2, h3, h4 {
   position: fixed;
   left: 0;
   top: 0;
-  background: linear-gradient(180deg, rgba(17, 27, 49, 0.95), rgba(11, 15, 28, 0.96));
+  background: linear-gradient(180deg, rgba(22, 33, 56, 0.95), rgba(11, 15, 28, 0.96));
   border-right: 1px solid var(--border);
   box-shadow: 14px 0 40px rgba(0, 0, 0, 0.35);
   padding: 32px 22px;
@@ -164,6 +165,10 @@ h1, h2, h3, h4 {
 }
 
 .sidebar-toggle i { font-size: 18px; }
+
+.sidebar ul li a.current {
+  border-left: 3px solid var(--accent);
+}
 
 /* Hero */
 .hero {
@@ -232,13 +237,14 @@ h1, h2, h3, h4 {
 
 .hero .social-icons {
   display: flex;
-  gap: 12px;
+  gap: 20px;
   margin-top: 8px;
+  font-size: 20px;
 }
 
 .hero .social-icons a {
-  width: 44px;
-  height: 44px;
+  width: 60px;
+  height: 60px;
   border-radius: 12px;
   display: inline-flex;
   align-items: center;
@@ -361,6 +367,7 @@ h1, h2, h3, h4 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 16px;
+  margin-top: 12px;
 }
 
 .skills-group {
@@ -401,7 +408,29 @@ h1, h2, h3, h4 {
 }
 
 .about .social-icons {
-  margin-top: 18px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.about .social-icons a {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: #f7fbff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+.about .social-icons a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  color: var(--accent);
 }
 
 /* Projects */
