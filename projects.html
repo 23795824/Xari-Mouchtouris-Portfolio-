@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="css/styles.css">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <!-- Glide.js Stylesheet -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
 
 </head>
 <body>
@@ -40,85 +38,83 @@
 <section class="projects">
     <div class="container">
         <h2>Projects</h2>
-        <!-- Glide.js Carousel -->
-        <div class="glide">
-            <div class="glide__track" data-glide-el="track">
-                <ul class="glide__slides">
-                    <!-- Project 1 -->
-                    <li class="glide__slide">
-                        <div class="project-item">
-                            <img src="images/Skripsie_project.png" alt="Advance IoT Health Monitoring Device">
-                            <h3>Advance IoT Health Monitoring Device</h3>
-                            <p>Design of an IoT device capable of measuring heart rate, oxygen levels, and temperature for my final year project. It featured an external display and a remote web server for real-time and historical data monitoring.</p>
-                            <a href="reports/23795824_Mouchtouris_XN_skripsie2024.pdf" target="_blank" class="btn">Learn More!</a>
-                        </div>
-                    </li>
-                    <!-- Project 2 -->
-                    <li class="glide__slide">
-                        <div class="project-item">
-                            <img src="images/light_source_project_2.png" alt="Multi-Functional Light Source">
-                            <h3>Multi-Functional Light Source</h3>
-                            <p>Design of a multi-function light source with three modes: Flashlight, Emergency, and Mood modes. The design features a PCB with software written in C (STM32).</p>
-                            <a href="reports/DesignE314_2023_Report_23795824[6243].pdf" target="_blank" class="btn">Learn More!</a>
-                        </div>
-                    </li>
-                    <!-- Project 3 -->
-                    <li class="glide__slide">
-                        <div class="project-item">
-                            <img src="images/motor_project.png" alt="Three-Phase Wound Rotor Induction Motor">
-                            <h3>Three-Phase Wound Rotor Induction Motor</h3>
-                            <p>Designed and simulated a three-phase wound rotor induction motor for a variable-speed pump application, adhering to specific design constraints.</p>
-                            <a href="reports/ES_344___Assignment_2_23795824 (1).pdf" target="_blank" class="btn">Learn More!</a>
-                        </div>
-                    </li>
-                    <!-- Project 4: Audio Amplifier -->
-                    <li class="glide__slide">
-                        <div class="project-item">
-                            <img src="images/audio_amplifier_project.png" alt="Class AB Audio Amplifier">
-                            <h3>Class AB Audio Amplifier</h3>
-                            <p>Design of a Class AB amplifier ensuring stability with no oscillation or distortion. The circuit was implemented using op-amps, transistors, resistors, and capacitors, meeting all specified requirements.</p>
-                            <a href="reports/audio_amplifier_report.pdf" target="_blank" class="btn">Learn More!</a>
-                        </div>
-                    </li>
-                </li>
-                <!-- Project 5: Space Invaders -->
-                <li class="glide__slide">
-                    <div class="project-item">
-                        <img src="images/Space Inavders_Java.png" alt="Recreation of Space Invaders (Java) ">
-                        <h3>Recreation of Space Invaders (Java)</h3>
-                        <p>Recreation of the classic Space Invaders game using Java. The game features player-controlled movement, enemy invader patterns, and shooting mechanics. The design utilizes Java's object-oriented principles with custom classes for player, invader, and projectile behavior, offering a smooth and engaging gameplay experience.</p>
-                        <a href="space_invader_project.html" class="btn">Learn More!</a>
-                    </div>
-                </li>
-
-                <!-- Project 6: Control Systems Practical - Integral Control -->
-                <li class="glide__slide">
-                    <div class="project-item">
-                        <img src="images/space_defense_controller.png" alt="Design and Testing of a Discrete Feedback Control System ">
-                        <h3>Design and Testing of a Discrete Feedback Control System </h3>
-                        <p>This project involved designing and testing a discrete feedback control system for a simulated plant. Two controllers were implemented: a discrete state-space controller with reference input and a discrete state-space controller with integral control. Their performance was evaluated based on reference tracking, disturbance rejection, and steady-state error. The results highlight how effectively each controller follows the reference signal and handles external disturbances.</p>
-                        <a href="control_systems_controller.html" class="btn">Learn More!</a>
-                    </div>
-                </li>
-
-
-
-                    <!-- Add more projects as desired -->
-                </ul>
+        <div class="project-grid">
+            <!-- Project 1 -->
+            <div class="project-item">
+                <img src="images/Skripsie_project.png" alt="Advance IoT Health Monitoring Device">
+                <h3>Advance IoT Health Monitoring Device</h3>
+                <p>Design of an IoT device capable of measuring heart rate, oxygen levels, and temperature for my final year project. It featured an external display and a remote web server for real-time and historical data monitoring.</p>
+                <div class="project-tags">
+                    <span class="project-tag"><i class="fas fa-broadcast-tower"></i> IoT</span>
+                    <span class="project-tag"><i class="fas fa-microchip"></i> ESP32</span>
+                    <span class="project-tag"><i class="fas fa-code"></i> C</span>
+                    <span class="project-tag"><i class="fas fa-heartbeat"></i> Health sensors</span>
+                    <span class="project-tag"><i class="fas fa-server"></i> Web server</span>
+                </div>
+                <a href="reports/23795824_Mouchtouris_XN_skripsie2024.pdf" target="_blank" class="btn">Learn More!</a>
             </div>
-            <!-- Glide.js Arrows -->
-            <div class="glide__arrows" data-glide-el="controls">
-                <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
+            <!-- Project 2 -->
+        <div class="project-item">
+            <img src="images/light_source_project_2.png" alt="Multi-Functional Light Source">
+            <h3>Multi-Functional Light Source</h3>
+            <p>Design of a multi-function light source with three modes: Flashlight, Emergency, and Mood modes. The design features a PCB with software written in C (STM32).</p>
+            <div class="project-tags">
+                <span class="project-tag"><i class="fas fa-microchip"></i> STM32</span>
+                <span class="project-tag"><i class="fas fa-code"></i> C</span>
+                <span class="project-tag"><i class="fas fa-project-diagram"></i> PCB</span>
             </div>
-            <!-- Glide.js Bullets -->
-            <div class="glide__bullets" data-glide-el="controls[nav]"></div>
+            <a href="reports/DesignE314_2023_Report_23795824[6243].pdf" target="_blank" class="btn">Learn More!</a>
         </div>
-        <!-- End of Glide.js Carousel -->
+            <!-- Project 3 -->
+        <div class="project-item">
+            <img src="images/motor_project.png" alt="Three-Phase Wound Rotor Induction Motor">
+            <h3>Three-Phase Wound Rotor Induction Motor</h3>
+            <p>Designed and simulated a three-phase wound rotor induction motor for a variable-speed pump application, adhering to specific design constraints.</p>
+            <div class="project-tags">
+                <span class="project-tag"><i class="fas fa-bolt"></i> Induction Motor</span>
+                <span class="project-tag"><i class="fas fa-calculator"></i> MATLAB & Simulink</span>
+                <span class="project-tag"><i class="fas fa-cogs"></i> Energy systems</span>
+                <span class="project-tag"><i class="fas fa-chart-line"></i> Ansys simulation</span>
+            </div>
+            <a href="reports/ES_344___Assignment_2_23795824 (1).pdf" target="_blank" class="btn">Learn More!</a>
+        </div>
+            <!-- Project 4: Audio Amplifier -->
+        <div class="project-item">
+            <img src="images/audio_amplifier_project.png" alt="Class AB Audio Amplifier">
+            <h3>Class AB Audio Amplifier</h3>
+            <p>Design of a Class AB amplifier ensuring stability with no oscillation or distortion. The circuit was implemented using op-amps, transistors, resistors, and capacitors, meeting all specified requirements.</p>
+            <div class="project-tags">
+                <span class="project-tag"><i class="fas fa-volume-up"></i> Audio</span>
+                <span class="project-tag"><i class="fas fa-wave-square"></i> Analog</span>
+                <span class="project-tag"><i class="fas fa-tools"></i> Circuit design</span>
+            </div>
+            <a href="reports/audio_amplifier_report.pdf" target="_blank" class="btn">Learn More!</a>
+        </div>
+            <!-- Project 5: Space Invaders -->
+        <div class="project-item">
+            <img src="images/Space Inavders_Java.png" alt="Recreation of Space Invaders (Java)">
+            <h3>Recreation of Space Invaders (Java)</h3>
+            <p>Recreation of the classic Space Invaders game using Java with player movement, enemy patterns, and shooting mechanics.</p>
+            <div class="project-tags">
+                <span class="project-tag"><i class="fas fa-code"></i> Java</span>
+                <span class="project-tag"><i class="fas fa-gamepad"></i> Game</span>
+                <span class="project-tag"><i class="fas fa-layer-group"></i> OOP</span>
+            </div>
+            <a href="space_invader_project.html" class="btn">Learn More!</a>
+        </div>
+            <!-- Project 6: Control Systems Practical - Integral Control -->
+        <div class="project-item">
+            <img src="images/space_defense_controller.png" alt="Design and Testing of a Discrete Feedback Control System">
+            <h3>Design and Testing of a Discrete Feedback Control System</h3>
+            <p>Designed and tested discrete state-space controllers (with reference input and with integral control) and evaluated tracking, disturbance rejection, and steady-state error.</p>
+            <div class="project-tags">
+                <span class="project-tag"><i class="fas fa-cogs"></i> Control Systems</span>
+                <span class="project-tag"><i class="fas fa-network-wired"></i> State-space</span>
+                <span class="project-tag"><i class="fas fa-calculator"></i> MATLAB & Simulink</span>
+            </div>
+            <a href="control_systems_controller.html" class="btn">Learn More!</a>
+        </div>
+        </div>
     </div>
 </section>
 
@@ -157,27 +153,5 @@
         }
     </style>
 
-    <!-- Glide.js Script -->
-<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
-
-<!-- Initialize Glide.js -->
-<script>
-    new Glide('.glide', {
-        type: 'carousel',
-        autoplay: 4000,  // Enables auto-sliding every 3 seconds
-        hoverpause: true, // Pauses on hover
-        perView: 3,       // Shows 3 items by default
-        gap: 20,          // Space between slides
-        animationDuration: 800, // Smooth transition effect
-        breakpoints: {
-            768: {
-                perView: 2  // Show 2 items on smaller screens
-            },
-            576: {
-                perView: 1  // Show 1 item on mobile
-            }
-        }
-    }).mount();
-</script>
 </body>
 </html>

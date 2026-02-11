@@ -437,6 +437,27 @@ h1, h2, h3, h4 {
 
 .project-item .btn { align-self: flex-start; }
 
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.project-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+  font-size: 13px;
+}
+
+.project-tag i { color: var(--accent-2); }
+
 /* Contact */
 .contact .inner { max-width: 1000px; margin: 0 auto; }
 
