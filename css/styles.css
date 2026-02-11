@@ -296,6 +296,18 @@ h1, h2, h3, h4 {
 
 .btn i { font-size: 1rem; }
 
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  box-shadow: none;
+}
+
+.btn-secondary:hover {
+  background: var(--panel);
+  color: var(--accent);
+}
+
 /* Sections */
 .section-heading {
   font-size: clamp(30px, 4vw, 38px);
