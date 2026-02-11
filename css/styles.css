@@ -458,6 +458,53 @@ h1, h2, h3, h4 {
 
 .project-tag i { color: var(--accent-2); }
 
+/* Intro Overlay */
+#intro-overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(104, 212, 255, 0.16), transparent 45%), linear-gradient(135deg, #070d1a, #0d1530 60%, #0b142a);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  color: var(--text);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.intro-active #intro-overlay {
+  display: flex;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#intro-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.intro-active body {
+  overflow: hidden;
+}
+
+.intro-hello {
+  font-family: 'Sora', 'Inter', sans-serif;
+  font-size: clamp(32px, 7vw, 64px);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #f7f9ff;
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.intro-hello.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Contact */
 .contact .inner { max-width: 1000px; margin: 0 auto; }
 

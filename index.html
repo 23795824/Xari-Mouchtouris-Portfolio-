@@ -13,6 +13,17 @@
   />
   <link rel="icon" type="image/png" href="images/favicon.png" />
 
+  <script>
+    // Flag intro-active before paint if not seen
+    try {
+      if (localStorage.getItem('sawIntro') !== '1') {
+        document.documentElement.classList.add('intro-active');
+      }
+    } catch (e) {
+      // ignore storage errors; just skip intro
+    }
+  </script>
+
   <!-- Google Fonts -->
   <link
     href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap"
@@ -96,6 +107,11 @@
   <button class="sidebar-toggle" id="sidebar-toggle">
     <i class="fas fa-bars"></i>
   </button>
+
+  <!-- Intro Overlay -->
+  <div id="intro-overlay" aria-hidden="true">
+    <div class="intro-hello" id="introHello">Hello</div>
+  </div>
 
   <!-- Main Content -->
   <main class="content">
@@ -195,10 +211,50 @@
   <!-- Custom Scripts -->
   <script src="js/scripts.js"></script>
   <script>
+    // Year in footer
     const yearEl = document.getElementById('year');
     if (yearEl) {
       yearEl.textContent = new Date().getFullYear();
     }
+
+    // Intro overlay (lightweight, shown once)
+    (function () {
+      const root = document.documentElement;
+      const introEnabled = root.classList.contains('intro-active');
+      if (!introEnabled) return;
+
+      const overlay = document.getElementById('intro-overlay');
+      const helloEl = document.getElementById('introHello');
+      if (!overlay || !helloEl) {
+        root.classList.remove('intro-active');
+        return;
+      }
+
+      const hellos = ['Hello!', 'Hola!', 'Bonjour!', 'Hallo!', 'Ciao!', 'Olá!', 'こんにちは!', '안녕하세요!'];
+      let i = 0;
+      let interval = null;
+
+      const changeHello = () => {
+        helloEl.classList.remove('show');
+        setTimeout(() => {
+          helloEl.textContent = hellos[i % hellos.length];
+          i += 1;
+          helloEl.classList.add('show');
+        }, 50);
+      };
+
+      changeHello();
+      interval = setInterval(changeHello, 480);
+
+      const finish = () => {
+        root.classList.remove('intro-active');
+        overlay.classList.add('hidden');
+        clearInterval(interval);
+        localStorage.setItem('sawIntro', '1');
+      };
+
+      setTimeout(finish, 2200); // auto-finish after ~2s
+    })();
   </script>
 </body>
 </html>
