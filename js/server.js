@@ -38,7 +38,7 @@ if (process.env.ALLOWED_ORIGINS) {
   process.exit(1);
 }
 
-// CORS Configuration - Restrict to Your Domain
+// CORS Configuration - Restrict to Domain
 app.use(
   cors({
     origin: function (origin, callback) {
@@ -126,7 +126,7 @@ app.post(
       // Compose Mail Options
 const mailOptions = {
     from: process.env.SMTP_USER,
-    to: 'xarinikolakimouchtouris@gmail.com', // Your new email address
+    to: 'xarinikolakimouchtouris@gmail.com',
     subject: `New Contact Form Submission from ${name}`,
     html: `
       <h3>New Contact Request</h3>
