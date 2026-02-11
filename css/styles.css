@@ -433,6 +433,36 @@ h1, h2, h3, h4 {
   color: var(--accent);
 }
 
+/* Reuse social icon styling in other sections (projects/contact footers) */
+.projects .social-icons,
+.contact .social-icons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.projects .social-icons a,
+.contact .social-icons a {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: #f7fbff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+.projects .social-icons a:hover,
+.contact .social-icons a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  color: var(--accent);
+}
+
 /* Projects */
 .projects .section-heading { text-align: center; }
 .projects .section-subtitle { text-align: center; }
