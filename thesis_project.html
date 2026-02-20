@@ -114,6 +114,224 @@
 
     <section class="thesis-section">
       <div class="container">
+        <h2>System architecture diagrams</h2>
+        <div class="thesis-diagrams">
+          <article class="thesis-card diagram-card">
+            <h3>Hardware architecture</h3>
+            <div class="diagram-scroll diagram-desktop">
+              <svg class="arch-svg" viewBox="0 0 1120 620" role="img" aria-label="Hardware architecture diagram">
+                <defs>
+                  <marker id="arrow-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                    <path d="M 0 0 L 10 5 L 0 10 z" class="svg-arrow-head"></path>
+                  </marker>
+                </defs>
+
+                <rect x="70" y="70" width="240" height="92" rx="14" class="svg-node"></rect>
+                <text x="190" y="106" class="svg-node-title">9V Input + LM7805</text>
+                <text x="190" y="132" class="svg-node-sub">Regulated 5V rail</text>
+
+                <rect x="430" y="240" width="270" height="120" rx="16" class="svg-node svg-core"></rect>
+                <text x="565" y="286" class="svg-node-title">ESP32-C3</text>
+                <text x="565" y="314" class="svg-node-sub">Main MCU + Wi-Fi station</text>
+
+                <rect x="70" y="230" width="260" height="88" rx="14" class="svg-node"></rect>
+                <text x="200" y="266" class="svg-node-title">D6T-1A-01 Sensor</text>
+                <text x="200" y="292" class="svg-node-sub">IR temperature (I2C)</text>
+
+                <rect x="70" y="370" width="260" height="88" rx="14" class="svg-node"></rect>
+                <text x="200" y="406" class="svg-node-title">SEN-15219 Module</text>
+                <text x="200" y="432" class="svg-node-sub">Heart rate + SpO2 (I2C)</text>
+
+                <rect x="800" y="120" width="270" height="88" rx="14" class="svg-node"></rect>
+                <text x="935" y="156" class="svg-node-title">Adafruit LLC 2050 TFT</text>
+                <text x="935" y="182" class="svg-node-sub">SPI real-time display</text>
+
+                <rect x="800" y="260" width="270" height="88" rx="14" class="svg-node"></rect>
+                <text x="935" y="296" class="svg-node-title">Wi-Fi Router</text>
+                <text x="935" y="322" class="svg-node-sub">Local network gateway</text>
+
+                <rect x="800" y="400" width="270" height="88" rx="14" class="svg-node svg-store"></rect>
+                <text x="935" y="436" class="svg-node-title">Firebase + Browser UI</text>
+                <text x="935" y="462" class="svg-node-sub">Historical + dashboard pages</text>
+
+                <path d="M310 116 H565 V240" class="svg-arrow" marker-end="url(#arrow-a)"></path>
+                <path d="M330 274 H430" class="svg-arrow" marker-end="url(#arrow-a)"></path>
+                <path d="M330 414 H390 V314 H430" class="svg-arrow" marker-end="url(#arrow-a)"></path>
+                <path d="M700 280 H760 V164 H800" class="svg-arrow" marker-end="url(#arrow-a)"></path>
+                <path d="M700 300 H800" class="svg-arrow" marker-end="url(#arrow-a)"></path>
+                <path d="M565 360 V444 H800" class="svg-arrow" marker-end="url(#arrow-a)"></path>
+                <path d="M935 348 V400" class="svg-arrow" marker-end="url(#arrow-a)"></path>
+
+                <text x="532" y="108" class="svg-link-label">5V rail</text>
+                <text x="370" y="267" class="svg-link-label">I2C</text>
+                <text x="392" y="356" class="svg-link-label">I2C</text>
+                <text x="764" y="176" class="svg-link-label">SPI</text>
+                <text x="746" y="292" class="svg-link-label">Wi-Fi</text>
+                <text x="690" y="436" class="svg-link-label">JSON / HTTPS</text>
+              </svg>
+            </div>
+            <div class="diagram-mobile">
+              <svg class="arch-svg-mobile" viewBox="0 0 360 860" role="img" aria-label="Hardware architecture diagram mobile">
+                <defs>
+                  <marker id="arrow-a-mobile" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                    <path d="M 0 0 L 10 5 L 0 10 z" class="svg-arrow-head"></path>
+                  </marker>
+                </defs>
+
+                <rect x="30" y="30" width="300" height="78" rx="12" class="svg-node"></rect>
+                <text x="180" y="62" class="svg-node-title svg-node-title--m">9V Input + LM7805</text>
+                <text x="180" y="84" class="svg-node-sub svg-node-sub--m">Regulated 5V rail</text>
+
+                <rect x="30" y="140" width="300" height="98" rx="12" class="svg-node"></rect>
+                <text x="180" y="172" class="svg-node-title svg-node-title--m">I2C Sensor Bus</text>
+                <text x="180" y="194" class="svg-node-sub svg-node-sub--m">D6T-1A-01 + SEN-15219</text>
+                <text x="180" y="214" class="svg-node-sub svg-node-sub--m">Temperature, HR, SpO2</text>
+
+                <rect x="30" y="278" width="300" height="104" rx="14" class="svg-node svg-core"></rect>
+                <text x="180" y="316" class="svg-node-title svg-node-title--m">ESP32-C3</text>
+                <text x="180" y="340" class="svg-node-sub svg-node-sub--m">Main MCU + Wi-Fi station</text>
+
+                <rect x="30" y="426" width="300" height="78" rx="12" class="svg-node"></rect>
+                <text x="180" y="458" class="svg-node-title svg-node-title--m">Adafruit LLC 2050 TFT</text>
+                <text x="180" y="480" class="svg-node-sub svg-node-sub--m">SPI real-time display</text>
+
+                <rect x="30" y="544" width="300" height="78" rx="12" class="svg-node"></rect>
+                <text x="180" y="576" class="svg-node-title svg-node-title--m">Wi-Fi Router</text>
+                <text x="180" y="598" class="svg-node-sub svg-node-sub--m">Local network gateway</text>
+
+                <rect x="30" y="662" width="300" height="86" rx="12" class="svg-node svg-store"></rect>
+                <text x="180" y="696" class="svg-node-title svg-node-title--m">Firebase + Browser UI</text>
+                <text x="180" y="720" class="svg-node-sub svg-node-sub--m">Historical + dashboard pages</text>
+
+                <path d="M180 108 V140" class="svg-arrow" marker-end="url(#arrow-a-mobile)"></path>
+                <path d="M180 238 V278" class="svg-arrow" marker-end="url(#arrow-a-mobile)"></path>
+                <path d="M180 382 V426" class="svg-arrow" marker-end="url(#arrow-a-mobile)"></path>
+                <path d="M180 382 V544" class="svg-arrow" marker-end="url(#arrow-a-mobile)"></path>
+                <path d="M180 622 V662" class="svg-arrow" marker-end="url(#arrow-a-mobile)"></path>
+
+                <text x="194" y="126" class="svg-link-label svg-link-label--m">5V</text>
+                <text x="194" y="262" class="svg-link-label svg-link-label--m">I2C</text>
+                <text x="194" y="412" class="svg-link-label svg-link-label--m">SPI</text>
+                <text x="194" y="528" class="svg-link-label svg-link-label--m">Wi-Fi</text>
+                <text x="194" y="648" class="svg-link-label svg-link-label--m">HTTPS</text>
+              </svg>
+            </div>
+            <p class="diagram-caption">
+              Block-level hardware view: sensing and display buses converge on the ESP32-C3, then data is routed to web and cloud services.
+            </p>
+          </article>
+
+          <article class="thesis-card diagram-card">
+            <h3>Software and data flow</h3>
+            <div class="diagram-scroll diagram-desktop">
+              <svg class="arch-svg" viewBox="0 0 1120 600" role="img" aria-label="Software and data flow diagram">
+                <defs>
+                  <marker id="arrow-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                    <path d="M 0 0 L 10 5 L 0 10 z" class="svg-arrow-head"></path>
+                  </marker>
+                </defs>
+
+                <rect x="70" y="70" width="220" height="90" rx="14" class="svg-node"></rect>
+                <text x="180" y="108" class="svg-node-title">System Startup</text>
+                <text x="180" y="134" class="svg-node-sub">Wi-Fi + sensor initialization</text>
+
+                <rect x="360" y="70" width="260" height="90" rx="14" class="svg-node svg-core"></rect>
+                <text x="490" y="108" class="svg-node-title">Acquisition Loop (1s)</text>
+                <text x="490" y="134" class="svg-node-sub">Read HR / SpO2 / Temp</text>
+
+                <rect x="700" y="70" width="280" height="90" rx="14" class="svg-node"></rect>
+                <text x="840" y="108" class="svg-node-title">Validation + Calibration</text>
+                <text x="840" y="134" class="svg-node-sub">Range checks + temperature offset</text>
+
+                <rect x="360" y="250" width="260" height="90" rx="14" class="svg-node"></rect>
+                <text x="490" y="288" class="svg-node-title">LCD Update</text>
+                <text x="490" y="314" class="svg-node-sub">Real-time on-device output</text>
+
+                <rect x="700" y="250" width="280" height="90" rx="14" class="svg-node"></rect>
+                <text x="840" y="288" class="svg-node-title">Web Dashboard Update</text>
+                <text x="840" y="314" class="svg-node-sub">Live charts and detail pages</text>
+
+                <rect x="70" y="410" width="260" height="90" rx="14" class="svg-node"></rect>
+                <text x="200" y="448" class="svg-node-title">Alert Engine</text>
+                <text x="200" y="474" class="svg-node-sub">Abnormal threshold notifications</text>
+
+                <rect x="700" y="410" width="280" height="90" rx="14" class="svg-node svg-store"></rect>
+                <text x="840" y="448" class="svg-node-title">Firebase Storage</text>
+                <text x="840" y="474" class="svg-node-sub">Historical data and averages</text>
+
+                <path d="M290 115 H360" class="svg-arrow" marker-end="url(#arrow-b)"></path>
+                <path d="M620 115 H700" class="svg-arrow" marker-end="url(#arrow-b)"></path>
+                <path d="M840 160 V250" class="svg-arrow" marker-end="url(#arrow-b)"></path>
+                <path d="M840 340 V410" class="svg-arrow" marker-end="url(#arrow-b)"></path>
+                <path d="M490 160 V250" class="svg-arrow" marker-end="url(#arrow-b)"></path>
+                <path d="M700 135 H650 V210 H530 V250" class="svg-arrow" marker-end="url(#arrow-b)"></path>
+                <path d="M700 145 H620 V380 H200 V410" class="svg-arrow" marker-end="url(#arrow-b)"></path>
+                <path d="M330 455 H340 V295 H360" class="svg-arrow" marker-end="url(#arrow-b)"></path>
+                <path d="M330 440 H650 V295 H700" class="svg-arrow" marker-end="url(#arrow-b)"></path>
+
+                <text x="625" y="205" class="svg-link-label">Realtime</text>
+                <text x="854" y="392" class="svg-link-label">Historical mode</text>
+                <text x="474" y="392" class="svg-link-label">Threshold checks</text>
+              </svg>
+            </div>
+            <div class="diagram-mobile">
+              <svg class="arch-svg-mobile" viewBox="0 0 360 950" role="img" aria-label="Software and data flow diagram mobile">
+                <defs>
+                  <marker id="arrow-b-mobile" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                    <path d="M 0 0 L 10 5 L 0 10 z" class="svg-arrow-head"></path>
+                  </marker>
+                </defs>
+
+                <rect x="30" y="30" width="300" height="78" rx="12" class="svg-node"></rect>
+                <text x="180" y="62" class="svg-node-title svg-node-title--m">System Startup</text>
+                <text x="180" y="84" class="svg-node-sub svg-node-sub--m">Wi-Fi + sensor initialization</text>
+
+                <rect x="30" y="144" width="300" height="88" rx="12" class="svg-node svg-core"></rect>
+                <text x="180" y="178" class="svg-node-title svg-node-title--m">Acquisition Loop (1s)</text>
+                <text x="180" y="202" class="svg-node-sub svg-node-sub--m">Read HR / SpO2 / Temp</text>
+
+                <rect x="30" y="270" width="300" height="88" rx="12" class="svg-node"></rect>
+                <text x="180" y="304" class="svg-node-title svg-node-title--m">Validation + Calibration</text>
+                <text x="180" y="328" class="svg-node-sub svg-node-sub--m">Range checks + temp offset</text>
+
+                <rect x="30" y="396" width="300" height="78" rx="12" class="svg-node"></rect>
+                <text x="180" y="428" class="svg-node-title svg-node-title--m">LCD Update</text>
+                <text x="180" y="450" class="svg-node-sub svg-node-sub--m">Real-time on-device output</text>
+
+                <rect x="30" y="512" width="300" height="78" rx="12" class="svg-node"></rect>
+                <text x="180" y="544" class="svg-node-title svg-node-title--m">Web Dashboard Update</text>
+                <text x="180" y="566" class="svg-node-sub svg-node-sub--m">Live charts and detail pages</text>
+
+                <rect x="30" y="628" width="300" height="86" rx="12" class="svg-node svg-store"></rect>
+                <text x="180" y="662" class="svg-node-title svg-node-title--m">Firebase Storage</text>
+                <text x="180" y="686" class="svg-node-sub svg-node-sub--m">Historical data and averages</text>
+
+                <rect x="30" y="754" width="300" height="86" rx="12" class="svg-node"></rect>
+                <text x="180" y="788" class="svg-node-title svg-node-title--m">Alert Engine</text>
+                <text x="180" y="812" class="svg-node-sub svg-node-sub--m">Abnormal threshold notifications</text>
+
+                <path d="M180 108 V144" class="svg-arrow" marker-end="url(#arrow-b-mobile)"></path>
+                <path d="M180 232 V270" class="svg-arrow" marker-end="url(#arrow-b-mobile)"></path>
+                <path d="M180 358 V396" class="svg-arrow" marker-end="url(#arrow-b-mobile)"></path>
+                <path d="M180 474 V512" class="svg-arrow" marker-end="url(#arrow-b-mobile)"></path>
+                <path d="M180 590 V628" class="svg-arrow" marker-end="url(#arrow-b-mobile)"></path>
+                <path d="M180 358 V754" class="svg-arrow" marker-end="url(#arrow-b-mobile)"></path>
+
+                <text x="194" y="382" class="svg-link-label svg-link-label--m">Realtime</text>
+                <text x="194" y="612" class="svg-link-label svg-link-label--m">Historical mode</text>
+                <text x="194" y="738" class="svg-link-label svg-link-label--m">Threshold checks</text>
+              </svg>
+            </div>
+            <p class="diagram-caption">
+              Software pipeline from acquisition to validation, real-time presentation, persistent storage, and abnormal event alerting.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="thesis-section">
+      <div class="container">
         <h2>Hardware design</h2>
         <div class="thesis-grid">
           <article class="thesis-card">

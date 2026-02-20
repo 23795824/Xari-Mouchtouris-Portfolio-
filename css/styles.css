@@ -847,6 +847,119 @@ h1, h2, h3, h4 {
   gap: 16px;
 }
 
+.thesis-diagrams {
+  display: grid;
+  gap: 16px;
+}
+
+.diagram-card {
+  background:
+    radial-gradient(800px circle at 10% 0%, rgba(124, 140, 255, 0.1), transparent 48%),
+    var(--card);
+}
+
+.diagram-scroll {
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.diagram-mobile {
+  display: none;
+}
+
+.arch-svg {
+  width: 100%;
+  min-width: 980px;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(13, 23, 42, 0.75), rgba(10, 18, 34, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.arch-svg-mobile {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(13, 23, 42, 0.75), rgba(10, 18, 34, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.svg-node {
+  fill: rgba(15, 25, 45, 0.88);
+  stroke: rgba(255, 255, 255, 0.18);
+  stroke-width: 2;
+}
+
+.svg-core {
+  fill: rgba(104, 212, 255, 0.13);
+  stroke: rgba(104, 212, 255, 0.58);
+}
+
+.svg-store {
+  fill: rgba(246, 199, 108, 0.1);
+  stroke: rgba(246, 199, 108, 0.55);
+}
+
+.svg-arrow {
+  fill: none;
+  stroke: rgba(176, 227, 255, 0.9);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.svg-arrow-head {
+  fill: rgba(176, 227, 255, 0.95);
+}
+
+.svg-node-title {
+  font-family: 'Sora', 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  fill: #f5f7ff;
+  text-anchor: middle;
+}
+
+.svg-node-sub {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 13px;
+  fill: #b8c6df;
+  text-anchor: middle;
+}
+
+.svg-node-title--m {
+  font-size: 13px;
+}
+
+.svg-node-sub--m {
+  font-size: 11px;
+}
+
+.svg-link-label {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 13px;
+  fill: #8edcff;
+  font-weight: 600;
+  paint-order: stroke;
+  stroke: rgba(8, 15, 29, 0.92);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
+
+.svg-link-label--m {
+  font-size: 11px;
+  stroke-width: 3px;
+}
+
+.diagram-caption {
+  margin-top: 10px;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
 .thesis-card {
   background: var(--card);
   border: 1px solid var(--border);
@@ -960,6 +1073,24 @@ body > #particles-js {
   }
   .thesis-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .thesis-section { padding-top: 24px; padding-bottom: 20px; }
+
+  .diagram-desktop {
+    display: none;
+  }
+
+  .diagram-mobile {
+    display: block;
+  }
+
+  .diagram-scroll {
+    overflow: visible;
+    padding-bottom: 0;
+  }
+
+  /* Fallback so older desktop SVG markup still fits mobile width. */
+  .arch-svg {
+    min-width: 0;
+  }
 }
 
 @media (max-width: 540px) {
