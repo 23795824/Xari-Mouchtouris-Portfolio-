@@ -519,8 +519,10 @@ h1, h2, h3, h4 {
 
 .project-item img {
   width: 100%;
+  height: clamp(190px, 22vw, 260px);
   border-radius: var(--radius-sm);
   object-fit: cover;
+  object-position: center;
 }
 
 .project-item h3 { margin-bottom: 4px; }
@@ -789,8 +791,13 @@ h1, h2, h3, h4 {
   box-shadow: var(--shadow);
 }
 
+.thesis-hero-media picture {
+  display: block;
+}
+
 .thesis-hero-media img {
   width: 100%;
+  height: auto;
   border-radius: var(--radius-sm);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -1064,6 +1071,7 @@ body > #particles-js {
   .hero .container { gap: 12px; }
   .hero .social-icons { justify-content: flex-start; }
   .project-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .project-item img { height: 220px; }
   .contact-grid { grid-template-columns: 1fr; }
   .thesis-hero-grid,
   .thesis-two-col,
@@ -1099,6 +1107,7 @@ body > #particles-js {
   .hero p { font-size: 17px; }
   .btn { width: 100%; justify-content: center; }
   .container { width: calc(100% - 28px); }
+  .project-item img { height: 195px; }
 
   .skills-grid {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
